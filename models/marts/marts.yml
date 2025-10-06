@@ -9,11 +9,10 @@ models:
         tests:
           - unique
           - not_null
-  - name: fct_orders
-    description: orders fact model
-    columns:
-      - name: order_id
-        description: the primary key for orders
-        tests:
-          - unique
-          - not_null
+  - name: fct_product_analysis
+    config:
+      freshness:
+        build_after: 
+          count: 10
+          period: minute
+          updates_on: any  
