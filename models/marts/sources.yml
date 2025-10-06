@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: products
+    database: playground
+    schema: jvonk_dbt
+    tables:
+      - name: dim_products
+        loaded_at_field: edwh_peil_dtm
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}

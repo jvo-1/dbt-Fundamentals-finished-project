@@ -1,2 +1,2 @@
 select *
-from {{ ref("Orders_jvo", "dim_products") }}
+from {{ source('products', 'dim_products') }}
